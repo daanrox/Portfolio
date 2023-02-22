@@ -77,7 +77,7 @@ hoverChangeDescription(
 );
 hoverChangeDescription(
   ".styled",
-  "styled-components é uma biblioteca que utiliza o conceito de CSS-in-JS, ou seja, que nos permite escrever códigos CSS dentro do Javascript."
+  "O Spark AR é uma linguagem de programação usada para criar efeitos de realidade aumentada (AR) para as plataformas da Meta. A linguagem é baseada em JavaScript. Os desenvolvedores utilizam o Spark AR para criar e personalizar efeitos de AR, como modelagem 3D, animação, rastreamento de objetos e reconhecimento facial."
 );
 hoverChangeDescription(
   ".tailwind",
