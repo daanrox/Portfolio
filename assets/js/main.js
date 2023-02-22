@@ -9,7 +9,7 @@ initScrollReveal();
 typeWrite(document.querySelector(".typewriter"));
 
 hoverChangeExperience(
-  ".digitalhouse",
+  ".metaspark",
   `Trabalhei como criador de filtros para o Instagram. Nessa função, 
   fui responsável por desenvolver e implementar conceitos de filtros para imagens e vídeos que fossem criativos, 
   atraentes e relevantes para o público do Instagram. Utilizei habilidades avançadas em programas de design, bem como 
@@ -21,7 +21,7 @@ hoverChangeExperience(
 );
 
 hoverChangeExperience(
-  ".zuplae",
+  ".takepic",
   `Trabalho gerenciando uma equipe de editores de fotografia, garantindo a entrega de imagens de alta 
   qualidade dentro dos prazos estabelecidos. Desenvolvendo e implementando processos eficientes de edição de fotografia, 
   aumentando a produtividade e eficiência da equipe. Colaborando com outros departamentos para garantir que as imagens 
@@ -42,7 +42,7 @@ hoverChangeExperience(
 );
 
 hoverChangeExperience(
-  ".contweb",
+  ".painhas",
   `Trabalhei como Técnico de Transmissão em uma empresa de mídia, onde fui responsável por garantir que o 
   equipamento de transmissão ao vivo fosse configurado e operado de forma adequada, permitindo que os eventos fossem transmitidos 
   com qualidade e sem interrupções, a fim de proporcionar uma experiência positiva aos espectadores.`,
