@@ -2,7 +2,7 @@
   💻<br>Portfólio - Daanrox
 </h1>
 
-![Resultado final do projeto](aqui)
+![Resultado final do projeto](./assets/image/preview-site.jpg)
 
 <h4 align="center"><a href="https://www.daanrox.com/">Clique para visitar o projeto</a></h4>
 
@@ -24,7 +24,7 @@ O site é composto por cinco seções:
 Para o desenvolvimento deste site utilizei as seguintes tecnologias:
 
 - HTML;
-- Sass;
+- SCSS;
 - JavaScript;
 - ScrollReveal;
 - SVG Inject;
