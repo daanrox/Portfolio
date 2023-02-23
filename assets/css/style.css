@@ -22,6 +22,26 @@
     transition: all 0.3s ease;
     padding: 25px 0 25px 0;
   }
+
+  @media (max-width: 1420px) {
+    .social-buttons {
+      position: static;
+      transform: translateY(100px);
+      bottom: 20px;
+      right: 20px;
+      flex-direction: row;
+      align-items: start;
+      justify-content: center;
+    }
+  
+    .social-button {
+      width: 25px;
+      height: 25px;
+      margin: 0px 30px;
+      padding: 0px 0;
+
+    }
+  }
   
   .discordbutton img{
     transition: all 0.3s ease;
