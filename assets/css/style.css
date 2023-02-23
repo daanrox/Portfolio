@@ -26,7 +26,7 @@
   @media (max-width: 1420px) {
     .social-buttons {
       position: static;
-      transform: translateY(100px);
+      transform: translateY(140px);
       bottom: 20px;
       right: 20px;
       flex-direction: row;
