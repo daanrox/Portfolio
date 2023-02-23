@@ -32,12 +32,13 @@ hoverChangeExperience(
 );
 
 hoverChangeExperience(
-  ".codigofontetv",
-  `Trabalhei como Social Media e Designer no Código Fonte TV, 
-  onde teve como foco as criações de conteúdos sobre programação 
-  para a comunidade dev através das redes sociais.`,
+  ".advertiz",
+  `Atuei como Social Media e Designer na AdvertiZ., uma empresa focada em criar conteúdo de programação para a comunidade de 
+  desenvolvedores através das redes sociais, com a criação de estratégias de marketing digital para aumentar a presença online da empresa e 
+  divulgar os conteúdos produzidos pela equipe. Também fui responsável por criar conteúdos visuais atraentes para as redes sociais, 
+  incluindo posts, imagens e vídeos.`,
   "Social Media e Designer",
-  "Código Fonte TV",
+  "AdvertiZ.",
   "Jun 2021 - Jan 2022 (8 meses)"
 );
 
