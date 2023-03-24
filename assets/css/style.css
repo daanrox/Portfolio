@@ -215,7 +215,9 @@ header .grid-layout nav .nav-list li a:hover {
   }
   }
   #s-home {
+  
   padding: 0px 50px;
+  padding-top: 100px;
   background-color: #040405;
   position: relative;
   }
@@ -313,6 +315,7 @@ header .grid-layout nav .nav-list li a:hover {
   
   #s-about {
   padding: 72px 0px;
+  padding-top: 170px;
   background-color: #040405;
   }
   
@@ -373,7 +376,7 @@ header .grid-layout nav .nav-list li a:hover {
   #s-about .grid-layout>div #creator-photo h3 {
     color: #040405;
     background-color: #fff;
-    padding: 8px;
+    padding: 8\px;
     border-radius: 16px;
     width: 180px;
     text-align: center;
@@ -474,3 +477,24 @@ header .grid-layout nav .nav-list li a:hover {
     transform: scale(2.5);
 
   }
+
+
+  #s-experience{
+    padding: 250px 0;
+  }
+
+
+  #s-projects{
+    padding: 250px 0;
+
+  }
+
+#s-services{
+  padding: 110px 0;
+
+}
+
+#s-skills{
+  padding: 180px 0;
+
+}

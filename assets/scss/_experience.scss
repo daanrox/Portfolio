@@ -3,6 +3,7 @@
   color: $color-white;
   @include spacing-section;
   .grid-layout {
+    
     h2 {
       @include title-section();
       span {
@@ -12,7 +13,7 @@
     #experience {
       margin-top: $gap-4;
       display: flex;
-      gap: 40px;
+      gap: 160px;
       @include responsive-desktop {
         flex-wrap: wrap;
       }
@@ -85,3 +86,4 @@
     }
   }
 }
+
