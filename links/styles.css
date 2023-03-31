@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@100;300;500;700;900&display=swap');
+
+body{
+  background-color: #3C63EE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('./assets/background.png');
+  background-repeat: repeat;
+  background-size: 50px 50px;
+  animation: animatedBackground 20s linear infinite;
+}
+
+
+@media only screen 
+and (min-width : 820px) {
+  body{
+    animation: animatedBackground 60s linear infinite;
+  }
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+button{
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+#logo{
+  min-height: 40px;
+  height: 70px;
+  max-height: 8vh;
+  width: auto;
+  margin: 20px 0 40px 0;
+}
+
+#photo{
+  min-height: 100px;
+  height: 200px;
+  max-height: 20vh;
+  width: auto;
+  margin: 20px 0;
+  border-radius: 100%;
+  border: 8px solid #d53dff;
+}
+
+.buttonLogo{
+  margin: 0;
+  height: 20px;
+  margin-right: 15px;
+}
+
+#coderhouseicon{
+  height: 30px;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+li{
+  width: 100%;
+}
+
+button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  width: 300px;
+  background-color: #fff;
+  border: 4px solid #000;
+  position: relative;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  text-align: start;
+}
+
+#practicum{
+  background-color: #FFCF27;
+}
+
+#lucralize{
+  background-color: #0d1428;
+  color: #fff;
+}
+
+#vivo{
+  background-color: #660099;
+  color: #fff;
+}
+
+#vivoIcon{
+  height: 35px;
+}
+
+#coderhouse{
+  background: rgb(233,144,254);
+  background: linear-gradient(30deg, rgba(233,144,254,1) 0%, rgba(235,195,191,1) 35%, rgba(234,255,105,1) 100%);
+}
+
+#cupom{
+  font-weight: 400;
+}
+
+#coderTexts{
+  display: flex;
+  flex-direction: column;
+}
+
+button::before{
+  content: "";
+  position: absolute;
+  right: -11px;
+  top: 1px;
+  width: 98%;
+  height: 98%;
+  background-color: #000;
+  background-size: 12px, 100%;
+  border: 0.4rem solid #000;
+  z-index: -2;
+}
