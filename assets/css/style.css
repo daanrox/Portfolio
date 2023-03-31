@@ -220,6 +220,7 @@ header .grid-layout nav .nav-list li a:hover {
   padding-top: 100px;
   background-color: #040405;
   position: relative;
+  
   }
   @media screen and (max-width: 992px) {
   #s-home {
@@ -233,6 +234,7 @@ header .grid-layout nav .nav-list li a:hover {
   padding: 200px 0px;
   overflow: hidden;
   width: 100%;
+  
   }
   @media screen and (max-width: 992px) {
   #s-home .grid-layout #home {
@@ -255,10 +257,13 @@ header .grid-layout nav .nav-list li a:hover {
   }
   #s-home .grid-layout #home #home-container-text h1 {
   color: #fff;
+  margin-top: 45px;
   max-width: 650px;
   line-height: 140%;
   font-size: 4rem;
   font-weight: 500;
+  background-color: #040405
+
   }
 @media screen and (max-width: 992px) {
   #s-home .grid-layout #home #home-container-text h1 {
@@ -414,6 +419,9 @@ header .grid-layout nav .nav-list li a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 80px;
+    margin-bottom: 80px;
+
   }
   
   .social-button {
@@ -430,13 +438,12 @@ header .grid-layout nav .nav-list li a:hover {
 
   @media (max-width: 1420px) {
     .social-buttons {
-      position: static;
+      position: relative;
       transform: translateY(140px);
-      bottom: 20px;
-      right: 20px;
       flex-direction: row;
       align-items: start;
-      justify-content: center;
+      justify-content: flex;
+      margin: 0 auto;
     }
   
     .social-button {

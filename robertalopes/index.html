@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="./assets/Roberta_lopes.jpg" type="image/x-icon">
+  <meta name="theme-color" content="#bca082"/>
+  <meta name="author" content="Daanrox"/>
+  <meta name="description" content="Roberta Lopes Extensão de Cílios">
+  <script src="./script.js" defer></script>
+  <title>Roberta Lopes Links</title>
+</head>
+<body>
+  <img id="photo" src="./assets/Roberta_lopes.jpg" alt="Foto da Roberta Lopes">
+  <img id="logo" src="./assets/Logo.png" alt="Logo Roberta Lopes">
+  <ul>
+
+    <li>
+      <button id="agenda" onclick=" window.open('https://online.maapp.com.br/Robertalopes', '_blank')">
+        <img id="agenda-icon" class="buttonLogo" src="./assets/agenda.svg" alt="Uma ilustração de agenda">
+        <div id="coderTexts">
+          <p>Agende seu horário</p>
+  
+        </div> 
+      </button>
+    </li>
+    <li class="li-extension">
+      <button id="extension-btn" onclick="toggleExtensionImages()">
+        <img class="buttonLogo" src="./assets/lash.png" alt="Ícone de extensão de cílios">
+        Extensão de Cílios
+      </button>
+      <div id="extension-images" style="display: none; transition: 1.1s;">
+        <div id="carousel-container">
+        </div>
+        </div>
+    </li>
+
+    <li class="li-micro">
+      <button id="micro-btn" onclick="toggleMicroImages()">
+        <img class="buttonLogo" src="./assets/micro.png" alt="Ícone de extensão de cílios">
+        Micropigmentação Labial
+      </button>
+      <div id="micro-images" style="display: none;  transition: 1.1s;">
+        <div>
+          <div id="carousel-container2">
+
+          </div>
+        </div>
+        
+        
+        
+</div>
+    </li>
+
+    <li>
+      <button onclick=" window.open('https://wa.me/5531993543179', '_blank')">
+        <img class="buttonLogo" src="./assets/whatsapp_robertaLopes.svg" alt="Logo do Whatsapp">
+        Whatsapp
+      </button>
+    </li>
+    <li>
+      <button onclick=" window.open('https://www.instagram.com/robertalopees_/', '_blank')">
+        <img class="buttonLogo" src="./assets/instagram.png" alt="Logo do Instagram, uma câmera polaroid">
+        Instagram
+      </button>
+    </li>
+    <li>
+      <button onclick=" window.open('https://www.google.com/maps/search/?api=1&query=Rua%20Gilson%20Diniz,%2070%20-%20Darcy%20Ribeiro,%20Contagem%20-%20MG,%2032060-517', '_blank')">
+        <img class="buttonLogo" src="./assets/location.png" alt="Ícone de localização, uma tag em um mapa">
+        Endereço
+      </button>
+    </li>
+  </ul>
+</body>
+<footer>
+  <p class="footer">Desenvolvido com amor por <a id="daanrox" href="http://instagram.com/daanrox" target="_blank">Daanrox</a></p>
+</footer>
+</html>
