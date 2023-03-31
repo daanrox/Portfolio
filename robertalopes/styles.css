@@ -181,11 +181,6 @@ button::before{
   transition: 2s;
 }
 
-#extension-images img:hover {
-  /* transform: scale(1.05); */
- 
-}
-
  .li-micro{
   display: flex;
   flex-direction: column;
@@ -198,12 +193,8 @@ button::before{
   max-width: 100%;
   border-radius: 15px;
   align-items: center;
-  /* transition: 2s; */
 }
-#micro-images img:hover {
-  /* transform: scale(1.05); */
- 
-}
+
 
 
 #carousel-container {
