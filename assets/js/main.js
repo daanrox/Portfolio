@@ -17,7 +17,7 @@ hoverChangeExperience(
   atendessem aos objetivos do cliente e melhorassem a experiência do usuário`,
   "Meta Spark Creator",
   "Meta",
-  "Nov 2018 - Atualmente (4 anos)"
+  "Nov 2018 - Atualmente"
 );
 
 hoverChangeExperience(
@@ -28,7 +28,7 @@ hoverChangeExperience(
   atendam aos requisitos de qualidade e de marca da empresa. `,
   "Coordenador de Edição",
   "TakePic",
-  "Mar 2023 - Atualmente (1 mês)"
+  "Mar 2023 - Atualmente"
 );
 
 hoverChangeExperience(
@@ -39,7 +39,7 @@ hoverChangeExperience(
   incluindo posts, imagens e vídeos.`,
   "Social Media e Designer",
   "AdvertiZ.",
-  "Jun 2021 - Jan 2022 (8 meses)"
+  "Jun 2021 - Jan 2022"
 );
 
 hoverChangeExperience(
@@ -49,7 +49,7 @@ hoverChangeExperience(
   com qualidade e sem interrupções, a fim de proporcionar uma experiência positiva aos espectadores.`,
   "Técnico de Transmissão",
   "Painhas",
-  "Ago 2022 - Outubro 2022 (3 meses)"
+  "Ago 2022 - Outubro 2022"
 );
 
 hoverChangeDescription(
