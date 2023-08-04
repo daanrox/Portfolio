@@ -141,7 +141,7 @@ footer {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 15px 0;
+    padding: 5px 0;
 }
 
 .footer__container {
@@ -149,7 +149,7 @@ footer {
     margin: 0 auto;
     width: 80%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     text-align: center;
     flex-wrap: wrap;
     padding: 10px;
@@ -175,11 +175,8 @@ footer span {
 
 .poweredby {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     gap: 1rem;
-    text-align: center;
-    align-self: center;
 }
 
 .footer__container>div>p {
@@ -187,14 +184,14 @@ footer span {
     font-size: 1.2rem;
 }
 
-.footer__container>div>a>img {
+.poweredby>a>img {
     height: 40px;
     transition: 0.7s;
 }
 
 
 
-.footer__container>div>img:hover {
+.poweredby>a>img:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -291,3 +288,72 @@ footer span {
 .order__total{
     margin: 35px 0;
 }
+
+.modal{
+    
+    background-color: var(--color-primary);
+    width: 90%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 150px;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    -webkit-box-shadow: 10px 14px 22px -12px rgba(0,0,0,0.45);
+    -moz-box-shadow: 10px 14px 22px -12px rgba(0,0,0,0.45);
+    box-shadow: 10px 14px 22px -12px rgba(0,0,0,0.45);
+    display: none;
+}
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+    
+}
+
+.close-modal {
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #d53dff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal-content > button{
+    background-color: var(--color-secondary);
+    padding: 0 35px;
+    height: 37px;
+    color: white;
+    font-size: 1.1rem;
+    transition: 0.4s;
+    border-radius: 4px;
+
+}
+
+.modal-content > button:hover{
+    cursor: pointer;
+    padding: 0 44px;
+}
+
+
+.modal {
+    display: none;
+  }
+  
+  .hidden {
+    display: none;
+  }
