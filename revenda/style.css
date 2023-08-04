@@ -4,7 +4,8 @@
     border: none;
     outline: none;
     box-sizing: border-box;
-    font-family: "Archivo";
+    font-family: 'Inter';
+
 }
 
 body {
@@ -28,21 +29,22 @@ header {
 }
 
 header>div {
-    width: 90%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
 .header__logo {
-    height: 40px;
+    height: 30px;
 }
 
 .header__exit {
     color: white;
     background-color: var(--color-secondary);
     height: 40px;
-    padding: 0 55px;
+    padding: 0 40px;
     border-radius: 5px;
     transition: 0.7s;
     font-size: 1rem;
@@ -56,7 +58,7 @@ header>div {
 
 .main {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     width: 90%;
     height: auto;
     margin: 0 auto;
@@ -69,12 +71,12 @@ header>div {
 
 .login {
     width: 35%;
-    min-width: 300px; 
+    min-width: 300px;
 }
 
 .message {
     width: 40%;
-    min-width: 300px; 
+    min-width: 300px;
     color: rgb(221, 221, 221);
     display: flex;
     flex-direction: column;
@@ -100,26 +102,29 @@ header>div {
 .login__form>input {
     height: 40px;
     padding-left: 25px;
+    border-radius: 4px;
 }
 
 .login__form>button {
     height: 40px;
     color: white;
     background-color: var(--color-secondary);
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
-.login__form>button:hover{
+.login__form>button:hover {
     cursor: pointer;
 }
 
-.message > h2{
+.message>h2 {
     color: var(--color-secondary);
     margin-bottom: 35px;
     font-size: 1.9rem;
 
 }
 
-.message > p{
+.message>p {
     line-height: 150%;
     max-width: 700px;
     font-size: 1.3rem;
@@ -134,35 +139,36 @@ footer {
     bottom: 0;
     display: flex;
     align-items: center;
-    justify-content: center; 
-    flex-wrap: wrap; 
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 15px 0;
 }
+
 .footer__container {
     display: flex;
     margin: 0 auto;
     width: 80%;
     align-items: center;
-    justify-content: space-between; 
-    text-align: center; 
+    justify-content: space-between;
+    text-align: center;
     flex-wrap: wrap;
     padding: 10px;
     gap: 1rem;
 }
 
-@media screen and (max-width:970px ){
-    .footer__container{
+@media screen and (max-width:970px) {
+    .footer__container {
         flex-direction: column;
     }
 }
 
 
-.footer__container > p {
+.footer__container>p {
     color: white;
     font-size: 1.2rem;
 }
 
-footer span{
+footer span {
     color: var(--color-secondary);
     font-style: bold;
 }
@@ -176,19 +182,112 @@ footer span{
     align-self: center;
 }
 
-.footer__container > div > p {
+.footer__container>div>p {
     color: white;
     font-size: 1.2rem;
 }
 
-.footer__container > div > img{
+.footer__container>div>a>img {
     height: 40px;
     transition: 0.7s;
 }
 
 
 
-.footer__container > div > img:hover{
+.footer__container>div>img:hover {
     cursor: pointer;
     transform: scale(1.1);
+}
+
+.main__dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.main__header {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: white;
+}
+
+.main__header>h3 {
+    font-family: 'Roboto';
+    font-size: 1.4rem;
+}
+
+.balance__display>p {
+    font-family: 'Roboto';
+    font-size: 1.4rem;
+}
+
+
+
+.balance__display {
+    color: white;
+}
+
+.main__order {
+    width: 80%;
+    color: white;
+    border-radius: 4px;
+    
+    background-color: rgba(20, 20, 20, 0.705);
+    padding: 15px;
+}
+
+.main__order>div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main__order>p {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.main__order>div>select {
+    max-width: 550px;
+    height: 35px;
+    padding-left: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    outline: none;
+
+}
+
+.order__form {
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.order__form > input{
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+
+
+.order__form > button{
+    height: 40px;
+    color: white;
+    border-radius: 4px;
+    font-size: 1.15rem;
+    background-color: var(--color-secondary);
+}
+.order__form > button:hover{
+    cursor: pointer;
+}
+.order__total{
+    margin: 35px 0;
 }

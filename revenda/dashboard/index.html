@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social Rox - Login</title>
     <meta name="author" content="Daanrox" />
-    <meta name="description" content="Meu nome é Daniel Nicolau, conhecido como Daanrox, desenvolvo interfaces modernas e de alta qualidade, concentrado em performance, animações, responsividade e SEO.">
-    <meta name="keywords" content="react js, comprar seguidores, seguidores instagram, curtidas instagram, engajamento, comprar visualizações, painel curtidas, curtidas grátis, likes instagram, comprar likes, comprar views, sites, filtros instagram, gifs instagram, criador de filtros, design, front end, aluno kenzie, programador web, Daanielrox, Danrox, Daanrox, Daan Rox, Daniel Nicolau da Silva Junior, Rox, daanrox games, daanrox web, daanrox programador, daanrox rox, daanrox design, daanrox filtros, daanrox site, daanrox github, daanrox portfolio,web, desenvolvimento, frontend, Daanrox, ui designer, programador, Daanrox Site, front-end, designer, ui, iuri, freelancer, freela, website, portfólio, Daniel Nicolau da Silva Junior, Daniel Nicolau, Daan Rox">
+    <meta name="description"
+        content="Meu nome é Daniel Nicolau, conhecido como Daanrox, desenvolvo interfaces modernas e de alta qualidade, concentrado em performance, animações, responsividade e SEO.">
+    <meta name="keywords"
+        content="react js, comprar seguidores, seguidores instagram, curtidas instagram, engajamento, comprar visualizações, painel curtidas, curtidas grátis, likes instagram, comprar likes, comprar views, sites, filtros instagram, gifs instagram, criador de filtros, design, front end, aluno kenzie, programador web, Daanielrox, Danrox, Daanrox, Daan Rox, Daniel Nicolau da Silva Junior, Rox, daanrox games, daanrox web, daanrox programador, daanrox rox, daanrox design, daanrox filtros, daanrox site, daanrox github, daanrox portfolio,web, desenvolvimento, frontend, Daanrox, ui designer, programador, Daanrox Site, front-end, designer, ui, iuri, freelancer, freela, website, portfólio, Daniel Nicolau da Silva Junior, Daniel Nicolau, Daan Rox">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&amp;display=swap"
         rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="icon" href=".././src/logo-page.png" />
     <meta property="og:description" content="Daanrox">
     <link rel="canonical" href="https://daanrox.com/">
@@ -27,8 +30,36 @@
             <button class="header__exit">Logout</button>
         </div>
     </header>
-    <main class="main">
-        
+    <main class="main__dashboard">
+        <div class="main__header">
+            <h3 style="color: white">Olá, <span class="name__user"></span></h3>
+            <div class="balance__display">
+                <p>Saldo: <span></span></p>
+            </div>
+        </div>
+
+        <div class="main__order">
+            <div>
+                <p>Selecione o Serviço</p>
+            <select id="serviceSelect">
+                
+            </select>
+
+            <form class="order__form">
+                <label>Link</label>
+                <input type="text" placeholder="Digite o link ..." required>
+
+                <label>Quantidade</label>
+                <input id="quantityInput" type="number" min ="100" max="50000" placeholder="Quantidade a inserir..." required>
+
+                <p class="order__total">Valor total do pedido: <span id="spanTotal"></span></p>
+                <button id="addOrder">Adicionar Pedido</button>
+            </form>
+
+            
+            </div>
+            
+        </div>
     </main>
 
 
@@ -36,12 +67,14 @@
         <div class="footer__container">
             <p>Copyright © 2023 <span>Daanrox</span> Todos os direitos reservados.</p>
             <div class="poweredby">
-                <p>Powered by</p> <img src=".././src/rox-footer.png">
+                <p>Powered by</p> <a href="https://wa.me/5531992812273"><img src=".././src/rox-footer.png"></a>
             </div>
         </div>
 
     </footer>
-    <script src="./script.js"></script>
+    <script type="module" src="./database.js"></script>
+    <script type="module" src="./script.js"></script>
+
 </body>
 
 </html>
