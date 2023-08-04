@@ -38,7 +38,7 @@ function login(event) {
           localStorage.setItem('authToken', data.authToken);
   
           // Redirecionar o usuário para a página /dashboard
-          window.location.href = 'https://daanrox.com/dashboard';
+          window.location.href = 'https://daanrox.com/revenda/dashboard';
         } else {
           console.error('Erro: authToken não encontrado na resposta da requisição.');
         }
