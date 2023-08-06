@@ -13,40 +13,52 @@ function verifyToken() {
         };
 
         fetch('https://x8ki-letl-twmt.n7.xano.io/api:QeSM43R0/auth/me', requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                if (data.balance !== undefined) {
-                    const balanceDisplay = document.querySelector('.balance__display span');
-                    const formattedBalance = formatCurrencyBRL(data.balance);
-                    balanceDisplay.textContent = formattedBalance;
+            .then(response => {
+                if (!response.ok) {
+                    // Se a resposta não for ok, redirecione o usuário para a página de login
+                    redirectToLoginPage();
+                    throw new Error('Erro na requisição: ' + response.status);
                 }
-                if (data.name !== undefined) {
+                return response.json();
+            })
+            .then(data => {
+                // Verifique se os dados do usuário estão presentes na resposta
+                if (data && data.id !== undefined && data.name !== undefined && data.balance !== undefined) {
+                    const balanceDisplay = document.querySelector('.balance__display span');
+                    balanceDisplay.textContent = `R$ ${data.balance}`;
+
                     const nameUser = document.querySelector('.name__user');
                     nameUser.textContent = data.name;
-                } else {
-                    console.error('Erro: Saldo não encontrado na resposta da requisição.');
-                }
 
-                if (data.id !== undefined) {
                     const userId = data.id;
                     const addOrderButton = document.getElementById('addOrder');
-                    addOrderButton.addEventListener('click', () => addOrder(userId));
+                    addOrderButton.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        addOrder(userId)
+                    });
+                } else {
+                    // Dados do usuário ausentes, redirecione para a página de login
+                    redirectToLoginPage();
                 }
             })
             .catch(error => {
                 console.error('Erro na requisição:', error);
+                // Em caso de erro, redirecione para a página de login
+                redirectToLoginPage();
             });
     } else {
         redirectToLoginPage();
     }
 }
 
-function formatCurrencyBRL(value) {
-    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+function logoutButton() {
+    const buttonLogout = document.querySelector('.header__exit')
+    buttonLogout.addEventListener('click', redirectToLoginPage)
 }
 
 function redirectToLoginPage() {
-    window.location.href = 'https://daanrox.com/revenda';
+    localStorage.clear()
+    window.location.href = '/revenda';
 }
 
 function renderOptions() {
@@ -62,88 +74,103 @@ function renderOptions() {
 }
 
 function updateOrderTotal() {
-  const quantityInput = document.getElementById('quantityInput');
-  const totalSpan = document.getElementById('spanTotal');
-  const serviceSelect = document.getElementById('serviceSelect');
+    const quantityInput = document.getElementById('quantityInput');
+    const totalSpan = document.getElementById('spanTotal');
+    const serviceSelect = document.getElementById('serviceSelect');
 
-  const selectedServicePrice = parseFloat(serviceSelect.value);
-  const quantity = parseInt(quantityInput.value);
+    const selectedServicePrice = parseFloat(serviceSelect.value);
+    const quantity = parseInt(quantityInput.value);
 
-  if (!isNaN(selectedServicePrice) && !isNaN(quantity)) {
-      const total = (selectedServicePrice * quantity) / 1000;
-      totalSpan.textContent = formatCurrencyBRL(total);
-  } else {
-      totalSpan.textContent = formatCurrencyBRL(0);
-  }
+    if (!isNaN(selectedServicePrice) && !isNaN(quantity)) {
+        const total = (selectedServicePrice * quantity) / 1000;
+        totalSpan.textContent = total.toFixed(2);
+    } else {
+        totalSpan.textContent = '0.00';
+    }
 }
 
 function openModal(mensagem) {
-  const modal = document.querySelector('.modal');
-  const modalContent = modal.querySelector('.modal-content');
-  const modalMessage = modal.querySelector('p');
-  modalMessage.textContent = mensagem;
-  modal.style.display = 'block';
+    const modal = document.querySelector('.modal');
+    const modalContent = modal.querySelector('.modal-content');
+    const modalMessage = modal.querySelector('p');
+    modalMessage.textContent = mensagem;
+    modal.style.display = 'block';
 }
 
 function closeModal() {
-  const modal = document.querySelector('.modal');
-  modal.style.display = 'none';
+    const modal = document.querySelector('.modal');
+    modal.style.display = 'none';
 }
 
 async function addOrder(userId) {
-  const serviceSelect = document.getElementById('serviceSelect');
-  const linkInput = document.querySelector('input[type="text"]');
-  const quantityInput = document.getElementById('quantityInput');
+    const serviceSelect = document.getElementById('serviceSelect');
+    const linkInput = document.querySelector('input[type="text"]');
+    const quantityInput = document.getElementById('quantityInput');
 
-  const idServico = serviceSelect.options[serviceSelect.selectedIndex].getAttribute('data-id');
-  const link = linkInput.value;
-  const quantidade = quantityInput.value;
+    const idServico = serviceSelect.options[serviceSelect.selectedIndex].getAttribute('data-id');
+    const link = linkInput.value;
+    const quantidade = quantityInput.value;
 
-  const authToken = localStorage.getItem('authToken');
-  const requestOptions = {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${authToken}`
+    if (!userId || !idServico || !link || !quantidade) {
+        alert('Por favor, preencha todos os campos antes de adicionar o pedido.');
+        return;
     }
-  };
 
-  try {
-    const response = await fetch('https://x8ki-letl-twmt.n7.xano.io/api:QeSM43R0/auth/me', requestOptions);
-    const data = await response.json();
+    const authToken = localStorage.getItem('authToken');
 
-    const apiKey = data.key;
-    const saldoAtual = parseFloat(document.querySelector('.balance__display span').textContent.replace(',', '.').replace('R$ ', ''));
-    const totalPedido = parseFloat(document.getElementById('spanTotal').textContent.replace(',', '.'));
-
-    if (totalPedido > saldoAtual) {
-      openModal('Saldo insuficiente');
-    } else {
-      const queryParams = new URLSearchParams({
-        key: apiKey,
-        action: 'add',
-        service: idServico,
-        link: link,
-        quantity: quantidade
-      });
-
-      try {
-        const response = await fetch(`https://painelsmm.com.br/api/v2?${queryParams}`);
-        const data = await response.json();
-
-        if (data.success) {
-          const novoSaldo = (saldoAtual - totalPedido).toFixed(2);
-          await atualizarSaldoNoBancoDeDados(userId, novoSaldo);
-          openModal('Pedido realizado!');
-          const saldoDisplay = document.querySelector('.balance__display span');
-          saldoDisplay.textContent = formatCurrencyBRL(novoSaldo);
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${authToken}`
         }
-      } catch (error) {
+    };
+
+    try {
+        const response = await fetch('https://x8ki-letl-twmt.n7.xano.io/api:QeSM43R0/auth/me', requestOptions);
+        const data = await response.json();
+        const apiKey = data.key;
+        const balance = parseFloat(data.balance); // Obter o saldo do usuário a partir da resposta da API
+
+        const totalPedido = parseFloat(document.getElementById('spanTotal').textContent);
+        const novoSaldo = (balance - totalPedido).toFixed(2); // Calcular o novo saldo após deduzir o valor do pedido
+
+        if (totalPedido > balance) {
+            openModal('Saldo insuficiente');
+        } else {
+            const apiUrl = `https://painelsmm.com.br/api/v2?key=${apiKey}&action=add&service=${idServico}&link=${encodeURIComponent(link)}&quantity=${quantidade}`;
+
+            const requestOptionsPost = {
+                method: 'POST',
+                mode: 'no-cors', // Adicionar a opção 'no-cors' para evitar problemas com CORS
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            };
+
+            // Fazer a requisição POST para a API com os parâmetros necessários
+            await fetch(apiUrl, requestOptionsPost);
+
+            // Atualizar o saldo no backend
+            await atualizarSaldoNoBancoDeDados(userId, parseFloat(novoSaldo));
+
+            // Atualizar o saldo na tela
+            const saldoDisplay = document.querySelector('.balance__display span');
+            saldoDisplay.textContent = `R$ ${novoSaldo}`;
+
+            // Exibir o modal de "Pedido realizado"
+            openModal('Pedido realizado!');
+
+            // Atualizar a página após o usuário clicar em "OK" no modal
+            const closeModalButton = document.querySelector('.close-modal');
+            closeModalButton.addEventListener('click', () => {
+                closeModal();
+                window.location.reload();
+            });
+        }
+    } catch (error) {
         console.error('Erro na requisição:', error);
-      }
+        openModal('Erro na requisição');
     }
-  } catch (error) {
-    console.error('Erro na requisição:', error);
-  }
 }
 
 function atualizarSaldoNoBancoDeDados(userId, novoSaldo) {
@@ -160,14 +187,12 @@ function atualizarSaldoNoBancoDeDados(userId, novoSaldo) {
         })
     };
 
-    fetch(`https://x8ki-letl-twmt.n7.xano.io/api:QeSM43R0/user/${userId}`, opcoesRequisicao)
+    // Retornar uma Promessa para que possamos aguardar a atualização ser concluída na função addOrder
+    return fetch(`https://x8ki-letl-twmt.n7.xano.io/api:QeSM43R0/user/${userId}`, opcoesRequisicao)
         .then(response => response.json())
-        .then(data => {
-            const saldoDisplay = document.querySelector('.balance__display span');
-            saldoDisplay.textContent = formatCurrencyBRL(novoSaldo);
-        })
         .catch(error => {
             console.error('Erro na requisição:', error);
+            throw new Error('Erro na requisição: ' + error);
         });
 }
 
@@ -183,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const botaoFecharModal = document.querySelector('.close-modal');
     botaoFecharModal.addEventListener('click', closeModal);
 
+    logoutButton();
     verifyToken();
     updateOrderTotal();
 });
-

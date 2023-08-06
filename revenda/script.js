@@ -1,5 +1,5 @@
 function redirectToRevendaPage() {
-    window.location.href = 'https://daanrox.com/';
+    window.location.href = '/';
   }
   const sairButton = document.querySelector('.header__exit');
   sairButton.addEventListener('click', redirectToRevendaPage);
@@ -38,7 +38,7 @@ function login(event) {
           localStorage.setItem('authToken', data.authToken);
   
           // Redirecionar o usuário para a página /dashboard
-          window.location.href = 'https://daanrox.com/revenda/dashboard';
+          window.location.href = '/revenda/dashboard';
         } else {
           console.error('Erro: authToken não encontrado na resposta da requisição.');
         }

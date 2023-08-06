@@ -14,7 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&amp;display=swap"
         rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <link rel="icon" href=".././src/logo-page.png" />
     <meta property="og:description" content="Daanrox">
     <link rel="canonical" href="https://daanrox.com/">
@@ -41,39 +43,40 @@
         <div class="main__order">
             <div>
                 <p>Selecione o Serviço</p>
-            <select id="serviceSelect">
-                
-            </select>
+                <select id="serviceSelect">
 
-            <form class="order__form">
-                <label>Link</label>
-                <input type="text" placeholder="Digite o link ..." required>
+                </select>
 
-                <label>Quantidade</label>
-                <input id="quantityInput" type="number" min ="100" max="50000" placeholder="Quantidade a inserir..." required>
+                <form class="order__form">
+                    <label>Link</label>
+                    <input type="text" placeholder="Digite o link ..." required>
 
-                <p class="order__total">Valor total do pedido: <span id="spanTotal"></span></p>
-                <button id="addOrder">Adicionar Pedido</button>
-            </form>
+                    <label>Quantidade</label>
+                    <input id="quantityInput" type="number" min="100" max="50000" placeholder="Quantidade a inserir..."
+                        required>
 
-            
+                    <p class="order__total">Valor total do pedido: R$ <span id="spanTotal"></span></p>
+                    <button id="addOrder">Adicionar Pedido</button>
+                </form>
+
+
             </div>
-            
+
         </div>
     </main>
 
 
     <footer>
         <div class="footer__container">
-            
+
             <div class="poweredby">
                 <p>Powered by</p> <a href="https://wa.me/5531992812273"><img src=".././src/rox-footer.png"></a>
             </div>
         </div>
 
     </footer>
-    
-    
+
+
     <div class="modal">
         <div class="modal-content">
             <p>Pedido realizado!</p>
@@ -83,7 +86,7 @@
 
     <script type="module" src="./database.js"></script>
     <script type="module" src="./script.js"></script>
- 
+    <iframe id="hiddenIframe" style="display: none; width: 1px; height: 1px;"></iframe>
 </body>
 
 </html>
