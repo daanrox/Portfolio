@@ -137,7 +137,7 @@ async function addOrder(userId) {
         if (totalPedido > balance) {
             openModal('Saldo insuficiente');
         } else {
-            const apiUrl = `https://painelsmm.com.br/api/v2?key=${apiKey}&action=add&service=${idServico}&link=${encodeURIComponent(link)}&quantity=${quantidade}`;
+            const apiUrl = `https://machinesmm.com/api/v2?key=${apiKey}&action=add&service=${idServico}&link=${encodeURIComponent(link)}&quantity=${quantidade}`;
 
             const requestOptionsPost = {
                 method: 'POST',
