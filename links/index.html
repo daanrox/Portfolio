@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./styles.css" />
   <title>Daanrox Links</title>
   <meta name="author" content="Daanrox" />
   <meta name="description"
@@ -14,51 +14,72 @@
     content="sites, filtros instagram, gifs instagram, criador de filtros, design, front end, aluno kenzie, programador web, Daanielrox, Danrox, Daanrox, Daan Rox, Daniel Nicolau da Silva Junior, Rox, daanrox games, daanrox web, daanrox programador, daanrox rox, daanrox design, daanrox filtros, daanrox site, daanrox github, daanrox portfolio,web, desenvolvimento, frontend, Daanrox, ui designer, programador, Daanrox Site, front-end, designer, ui, iuri, freelancer, freela, website, portfólio, Daniel Nicolau da Silva Junior, Daniel Nicolau, Daan Rox" />
   <meta name="theme-color" content="#d53dff" />
   <meta name="copyright" content="Daanrox 2023" />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
   <meta http-equiv="content-language" content="pt-br" />
   <link rel="shortcut icon" href="assets/logo-page.png" type="image/x-icon" />
-  <link rel="icon" href="assets/image/logo-page.png" />
+  <link rel="icon" href="./assets/logo-page .png" />
   <link rel="apple-touch-icon" href="assets/image/logo-page.png" />
   <link rel="canonical" href="https://daanrox.com/" />
   <script src="assets/js/svg-inject.min.js"></script>
 </head>
 
 <body>
-  <img id="photo" src="./assets/Daanrox Image.jpg" alt="Foto do Daanrox">
-  <img id="logo" src="./assets/Logo.png" alt="Logo Daanrox">
-  <ul>
-    <li>
-      <button onclick=" window.open('https://wa.me/5531992812273', '_blank')">
-        <img class="buttonLogo" src="./assets/whatsapp_robertaLopes.svg" alt="Logo do Whatsapp">
-        Whatsapp
-      </button>
-    </li>
-    <li>
-      <button onclick=" window.open('https://www.instagram.com/daanrox/', '_blank')">
-        <img class="buttonLogo" src="./assets/instagram.png" alt="Logo do Instagram, uma câmera polaroid">
-        Instagram
-      </button>
-    </li>
-    <li>
-      <button onclick=" window.open('https://github.com/daanrox', '_blank')">
-        <img class="buttonLogo" src="./assets/github.png" alt="Logo do github, um polvo com rosto de gato">
-        Github
-      </button>
-    </li>
-    <li>
-      <button onclick=" window.open('https://linkedin.com/in/daanrox', '_blank');">
-        <img class="buttonLogo" src="./assets/linkedin.png" alt="Logo do Linkedin, apenas as letras I e N">
-        Linkedin
-      </button>
-    </li>
+  <div class="container">
+    <img
+      id="profile__image"
+      src="./assets/Daanrox.jpg"
+      alt="Foto de Daanrox"
+    />
+    <p>@daanrox</p>
+    <div id="switch" onclick="toggleMode()">
+      <button></button>
+      <span></span>
+    </div>
+    <ul class="list">
+      <li class="item">
+        <a href="https://github.com/daanrox" target="_blank">Portfólio</a>
+      </li>
+      <li class="item">
+        <a href="https://wa.me/5531992812273" target="_blank">Whatsapp</a>
+      </li>
+      <li class="item">
+        <a href="https://discord.com/invite/KfmTyMdPqg" target="_blank">Discord</a>
+      </li>
+      <li class="item">
+        <a href="https://www.linkedin.com/in/daanrox/" target="_blank">LinkedIn</a>
+      </li>
+      <li class="item">
+        <a href="https://daanrox.com/revenda" target="_blank">Painel Revenda</a>
+      </li>
+      
+    </ul>
 
-    <li>
-      <button onclick=" window.open('https://discord.gg/KfmTyMdPqg', '_blank')">
-        <img class="buttonLogo" src="./assets/discord.svg" alt="Logo do Discord">
-        Discord
-      </button>
-    </li>
-  </ul>
-  <p style="color:#d53dff;">Desenvolvido por Daanrox</p>
+
+    <div class="social__icons">
+      <a href="https://github.com/daanrox" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+      <a href="https://www.linkedin.com/in/daanrox/" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+      <a href="https://instagram.com/daanrox" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </div>
+  </div>
+  <footer>Desenvolvido com amor por Daanrox</footer>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <script src="./index.js"></script>
 </body>
 
 </html>
