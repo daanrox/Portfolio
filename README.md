@@ -1,47 +1,32 @@
-<h1 align="center">
-  💻<br>Portfólio - Daanrox
-</h1>
+# Portfólio - Daanrox
 
 ![Resultado final do projeto](./assets/image/preview-site.jpg)
 
-<h4 align="center"><a href="https://www.daanrox.com/">Clique para visitar o projeto</a></h4>
+## Descrição 
+Este repositório armazena o código fonte do meu portfólio online, composto por cinco seções:
+- **Home:** Apresentação inicial do site;
+- **Quem sou:** Descrição sobre minha trajetória e experiência;
+- **Experiências:** Destaque das empresas em que atuei na área de desenvolvimento e design;
+- **Projetos:** Apresentação de alguns projetos desenvolvidos, com links para os códigos no GitHub;
+- **Serviços:** Exibição, por meio de cards, dos diferentes serviços em que possuo conhecimento;
+- **Conhecimentos:** Apresentação das minhas habilidades em linguagens, com foco no front-end.
 
-## 📚 Seções
+### Deploy
+Aplicação em produção: [https://www.daanrox.com/](https://www.daanrox.com/)
 
-O site é composto por cinco seções:
+## Tecnologias Utilizadas
+- HTML
+- CSS
+- Javascript
+- SCSS
+- ScrollReveal
+- SVG Inject
 
-- **Home:** Nele temos uma breve apresentação;
-- **Quem sou:** Nessa seção tenho uma descrição dizendo um pouco sobre quem sou;
-- **Experiências:** Abordo algumas empresas da qual prestei meus serviços na área de desenvolvimento e design;
-- **Projetos:** Apresenta alguns projetos desenvolvidos e com link direto para os respectivos códigos no GitHub;
-- **Serviços:** Exibe através de cards os diferentes serviços em que possuo conhecimentos;
-- **Conhecimentos:** Nele apresentamos meus conhecimentos em algumas linguagens como o foco no front-end;
+## Contato
+Se tiver dúvidas ou precisar de mais informações, sinta-se à vontade para entrar em contato:
+- Email : [contato@daanrox.com](mailto:contato@daanrox.com)
+- LinkedIn: [https://www.linkedin.com/in/daanrox/](Daanrox)
 
----
+--- 
 
-## 💼 Tecnologias utilizadas
-
-Para o desenvolvimento deste site utilizei as seguintes tecnologias:
-
-- HTML;
-- SCSS;
-- JavaScript;
-- ScrollReveal;
-- SVG Inject;
-
----
-
-<h2>🦄 Autor</h2>
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/daanrox">
-        <img src="https://avatars.githubusercontent.com/u/61848908?v=4" width="100px;" alt="Foto do Daanrox no GitHub"/><br>
-        <sub>
-          <b>Daanrox</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+"Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos."
